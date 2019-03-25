@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { DatePicker, Button } from 'antd';
+import { SetSampleAction } from '../../redux/sample/actions';
 import logo from './logo.svg';
-import './App.css';
-
-class App extends Component {
+import 'antd/dist/antd.css';
+import './App.scss';
+export class App extends Component {
   render() {
     return (
       <div className="App">
@@ -11,6 +14,8 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
+          <DatePicker />
+          <Button>Hello World</Button>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -25,4 +30,15 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  SampleReducer: state.SampleReducer
+});
+
+const mapDispatchToProps = {
+  SetSampleAction,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
