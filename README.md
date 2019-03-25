@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Installed Package
+
+1. React
+2. Redux
+3. Redux-thunk (For ansyc redux)
+4. React Router
+5. Storybook (Write component in isolation)
+6. Jest & Enzyme (Testing)
+7. SASS (CSS Preprocessor)
+8. Antd (UI Component)
+
 ## Available Scripts
 
 In the project directory, you can run:
