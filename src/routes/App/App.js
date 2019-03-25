@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.scss';
+import { connect } from 'react-redux';
 import { DatePicker, Button } from 'antd';
+import { SetSampleAction } from '../../redux/sample/actions';
+import logo from './logo.svg';
 import 'antd/dist/antd.css';
+import './App.scss';
 class App extends Component {
   render() {
     return (
@@ -28,4 +30,15 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  SampleReducer: state.SampleReducer
+});
+
+const mapDispatchToProps = {
+  SetSampleAction,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
