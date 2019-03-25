@@ -5,7 +5,7 @@ import { SetSampleAction } from '../../redux/sample/actions';
 import logo from './logo.svg';
 import 'antd/dist/antd.css';
 import './App.scss';
-class App extends Component {
+export class App extends Component {
   render() {
     return (
       <div className="App">

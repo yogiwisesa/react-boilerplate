@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { shallow } from 'enzyme';
+import { App } from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+let wrapper;
+beforeEach(() => {
+  wrapper = shallow(<App/>);
+});
+
+it('Should render correctly', () => {
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('Should App-header class', () => {
+  expect(wrapper.find('.App-header').length).toBeGreaterThan(0);
 });
