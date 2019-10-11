@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { DatePicker, Button } from 'antd';
+import { DatePicker } from 'antd';
 import { SetSampleAction } from '../../redux/sample/actions';
+import { Button } from 'reactstrap';
 import logo from './logo.svg';
 import 'antd/dist/antd.css';
 import './App.scss';
@@ -14,6 +15,7 @@ export class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
+          <Button>Button</Button>
           <DatePicker />
           <Button>Hello World</Button>
           <a

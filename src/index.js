@@ -6,6 +6,8 @@ import configureStore from './redux/store';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const store = configureStore();
 
 const App = () => (
