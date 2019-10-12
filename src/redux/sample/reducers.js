@@ -7,16 +7,17 @@ const initialState = {
   }
 };
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.SAMPLE_TYPES:
-      return {
-        ...state,
-        data: action.payload
-      };
-    default:
-      return state;
-  }
-};
+export const ACTION_HANDLERS = {
+  [types.SAMPLE_TYPES]: (state, action) => {
+    return {
+      ...state,
+      data: action.payload
+    }
+  },
+}
 
-export default reducer;
+export default (state = initialState, action) => {
+  const handler = ACTION_HANDLERS[action.type];
+
+  return handler ? handler(state, action) : state;
+};
