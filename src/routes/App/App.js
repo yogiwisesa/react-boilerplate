@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { DatePicker } from 'antd';
 import { SetSampleAction } from '../../redux/sample/actions';
 import { Alert } from "react-bootstrap";
 import logo from './logo.svg';
-import 'antd/dist/antd.css';
+
 import './App.scss';
 export class App extends Component {
   render() {
@@ -15,7 +14,6 @@ export class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <DatePicker />
           <Alert variant="primary">Hello, here is a bootstrap alert!</Alert>
           <a
             className="App-link"
