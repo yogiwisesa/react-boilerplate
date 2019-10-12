@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SetSampleAction } from '../../redux/sample/actions';
+import { SetSampleAction, FetchAPISample } from '../../redux/actions';
 import { Alert } from "react-bootstrap";
 import logo from './logo.svg';
 
 import './App.scss';
 export class App extends Component {
+  
+  componentDidMount() {
+    this.props.SetSampleAction({'Lorem': 'lorem'})
+    this.props.FetchAPISample()
+  }
+
   render() {
     return (
       <div className="App">
@@ -35,6 +41,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   SetSampleAction,
+  FetchAPISample
 };
 
 export default connect(
