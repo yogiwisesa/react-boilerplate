@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import AppRouter from './routes/index';
+import routes from './routes/index';
+import {renderRoutes} from 'react-router-config';
 import configureStore from './redux/store';
+import {BrowserRouter} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 
@@ -13,7 +15,9 @@ const store = configureStore();
 const App = () => (
   <div>
     <Provider store={store}>
-      <AppRouter />
+      <BrowserRouter>
+        {renderRoutes(routes)}
+      </BrowserRouter>
     </Provider>
   </div>
 );

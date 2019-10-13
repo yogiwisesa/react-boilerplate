@@ -1,18 +1,23 @@
-import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory';
-import App from './App/App'
-export const history = createHistory();
+import App from './App/App';
+import SecondApp from './SecondApp/App';
+import NotFound from './NotFound';
+import Layout from '../components/Layout';
 
-const AppRouter = () => (
-  <Router history={history}>
-    <div>
-      <Switch>
-        <Route path="/" exact={true} component={App} />
-        <Route path="/app" exact={true} component={App} />
-      </Switch>
-    </div>
-  </Router>
-);
-
-export default AppRouter;
+export default [{
+  component: Layout,
+  routes: [{
+    path: "/",
+    exact: true,
+    component: App,
+  },
+  {
+    path: "/second-page",
+    exact: true,
+    component: SecondApp,
+  },
+  {
+    path: "*",
+    component: NotFound
+  }
+]
+}]
